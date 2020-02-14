@@ -44,4 +44,4 @@ class Board:
         nextBoard = Board(self.get_rows(), self.get_cols())
         for (row, col) in self.get_board_coords():
             nextBoard.set_cell(row, col, self.get_next_state(row, col))
-        return nextBoard.board
+        return nextBoard

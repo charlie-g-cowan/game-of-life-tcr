@@ -48,7 +48,23 @@ class GameOfLifeTests(unittest.TestCase):
 
     def testNextState(self):
         board = Board(2,2)
-        self.assertEqual(board.get_next_board(), [[False, False], [False, False]])
+        self.assertEqual(board.get_next_board().board, [[False, False], [False, False]])
+
+    def testNextStateSquare(self):
+        board = Board(2,2)
+        board.set_cell(0,0, True)
+        board.set_cell(1,0, True)
+        board.set_cell(0,1, True)
+        board.set_cell(1,1, True)
+        self.assertEqual(board.get_next_board().board, [[True, True], [True, True]])
+
+    def testLine(self):
+        board = Board(3,3)
+        board.set_cell(1,0,True)
+        board.set_cell(1,1,True)
+        board.set_cell(1,2,True)
+        self.assertEqual(board.get_next_board().board, [[False, True, False], [False, True, False], [False, True, False]])
+
 
 if __name__ == "__main__":
     unittest.main() # run all tests
