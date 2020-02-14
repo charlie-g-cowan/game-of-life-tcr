@@ -14,3 +14,6 @@ class Board:
         if row < 0 or row >= self.get_rows() or col < 0 or col >= self.get_cols():
             return False
         return self.board[row][col]
+
+    def set_cell(self, row, col, state):
+        self.board[row][col] = state
