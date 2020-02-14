@@ -38,5 +38,10 @@ class GameOfLifeTests(unittest.TestCase):
         board.set_cell(2,3, True)
         self.assertEqual(board.get_num_neigh(3,4), 1)
 
+    def testNextState(self):
+        board = Board(4, 5)
+        self.assertEqual(board.get_next_state(3, 4), False)
+
+
 if __name__ == "__main__":
     unittest.main() # run all tests

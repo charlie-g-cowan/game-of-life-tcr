@@ -30,3 +30,9 @@ class Board:
             if val:
                 result += 1
         return result
+
+    def get_next_state(self, row, col):
+        if self.get_cell(row, col):
+            return self.get_num_neigh(row, col) == 2 or self.get_num_neigh(row, col) == 3
+        else:
+            return self.get_num_neigh(row, col) == 3
