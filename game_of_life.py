@@ -39,3 +39,9 @@ class Board:
 
     def get_board_coords(self):
         return [(row, col) for row in range(self.get_rows()) for col in range(self.get_cols())]
+
+    def get_next_board(self):
+        nextBoard = Board(self.get_rows(), self.get_cols())
+        for (row, col) in self.get_board_coords():
+            nextBoard.set_cell(row, col, self.get_next_state(row, col))
+        return nextBoard.board
