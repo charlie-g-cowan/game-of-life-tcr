@@ -45,3 +45,10 @@ class Board:
         for (row, col) in self.get_board_coords():
             nextBoard.set_cell(row, col, self.get_next_state(row, col))
         return nextBoard
+
+    def get_number_filled(self):
+        result = False
+        for (row,col) in self.get_board_coords():
+            if self.get_cell(row,col):
+                result += 1
+        return result
