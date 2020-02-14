@@ -1,3 +1,5 @@
+from random import *
+
 class Board:
     def __init__(self, rows, cols):
         self.rows = rows
@@ -52,3 +54,11 @@ class Board:
             if self.get_cell(row,col):
                 result += 1
         return result
+
+    def fill(self):
+        for row in range(self.get_rows()):
+            for col in range(self.get_cols()):
+                val = False
+                if randint(0,1) == 1:
+                    val = True
+                self.set_cell(row, col, val)

@@ -65,10 +65,15 @@ class GameOfLifeTests(unittest.TestCase):
         board.set_cell(1,2,True)
         self.assertEqual(board.get_next_board().board, [[False, True, False], [False, True, False], [False, True, False]])
 
-    def testRandom(self):
+    def testFillNum(self):
         board = Board(50, 50)
         board.set_cell(4,5,True)
         self.assertEquals(board.get_number_filled(), 1)
+
+    def testRandom(self):
+        board = Board(50, 50)
+        board.fill()
+        assert board.get_number_filled() > 0
 
 
 if __name__ == "__main__":
