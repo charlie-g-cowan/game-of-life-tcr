@@ -42,6 +42,9 @@ class GameOfLifeTests(unittest.TestCase):
         board = Board(4, 5)
         self.assertEqual(board.get_next_state(3, 4), False)
 
+    def testAllBoardCoords(self):
+        board = Board(2,2)
+        self.assertEqual(board.get_board_coords(), [(0,0), (0,1), (1,0), (1,1)])
 
 if __name__ == "__main__":
     unittest.main() # run all tests
