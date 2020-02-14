@@ -23,3 +23,10 @@ class Board:
 
     def get_neighbour_vals(self, row, col):
         return [self.get_cell(row1, col1) for (row1, col1) in self.get_neighbours(row, col)]
+
+    def get_num_neigh(self, row, col):
+        result = False
+        for val in self.get_neighbour_vals(row, col):
+            if val:
+                result += 1
+        return result

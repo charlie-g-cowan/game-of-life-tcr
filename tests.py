@@ -29,6 +29,14 @@ class GameOfLifeTests(unittest.TestCase):
     def testNeighbourVals(self):
         board = Board(4, 5)
         self.assertEqual(board.get_neighbour_vals(3,4), [False, False, False, False, False, False, False, False])
+        board.set_cell(2,3, True)
+        self.assertEqual(board.get_neighbour_vals(3,4), [True, False, False, False, False, False, False, False])
+
+    def testNumNeigh(self):
+        board = Board(4,5)
+        self.assertEqual(board.get_num_neigh(3,4), 0)
+        board.set_cell(2,3, True)
+        self.assertEqual(board.get_num_neigh(3,4), 1)
 
 if __name__ == "__main__":
     unittest.main() # run all tests
