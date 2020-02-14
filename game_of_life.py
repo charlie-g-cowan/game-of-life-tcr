@@ -20,3 +20,6 @@ class Board:
 
     def get_neighbours(self, row, col):
         return [(row - 1, col - 1), (row - 1, col), (row -1, col+1), (row, col-1), (row,col+1), (row+1, col-1), (row+1, col),(row+1, col+1)]
+
+    def get_neighbour_vals(self, row, col):
+        return [self.get_cell(row1, col1) for (row1, col1) in self.get_neighbours(row, col)]
