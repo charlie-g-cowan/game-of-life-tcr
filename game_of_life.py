@@ -17,3 +17,6 @@ class Board:
 
     def set_cell(self, row, col, state):
         self.board[row][col] = state
+
+    def get_neighbours(self, row, col):
+        return [(row - 1, col - 1), (row - 1, col), (row -1, col+1), (row, col-1), (row,col+1), (row+1, col-1), (row+1, col),(row+1, col+1)]
