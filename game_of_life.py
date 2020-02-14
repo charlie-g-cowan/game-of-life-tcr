@@ -38,4 +38,4 @@ class Board:
             return self.get_num_neigh(row, col) == 3
 
     def get_board_coords(self):
-        return [(row, col) for row in self.get_rows() for col in self.get_cols()]
+        return [(row, col) for row in range(self.get_rows()) for col in range(self.get_cols())]
