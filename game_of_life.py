@@ -9,3 +9,8 @@ class Board:
 
     def get_cols(self):
         return self.cols
+
+    def get_cell(self, row, col):
+        if row < 0 or row >= self.get_rows() or col < 0 or col >= self.get_cols():
+            return False
+        return self.board[row][col]
