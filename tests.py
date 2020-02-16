@@ -75,6 +75,5 @@ class GameOfLifeTests(unittest.TestCase):
         board.fill()
         assert board.get_number_filled() > 0
 
-
 if __name__ == "__main__":
     unittest.main() # run all tests
